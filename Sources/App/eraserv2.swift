@@ -1,8 +1,8 @@
-  
+ 
 public class Emptyier {
     var fullboard = Scram().combiner()         
     var doneboard = [[Int]]()
-    var cleaned = [[Any]]()
+    var cleaned = [[Int?]]()
 
     func eraser(diff:String){
         var countempt = 0
@@ -46,12 +46,12 @@ public class Emptyier {
     func cleaner() {
         var counter = 0
         for x in doneboard{
-            var xx = [Any]()
+            var xx = [Int?]()
             xx = x
             counter = 0
             for y in x{        
                 if y == 0{
-                    xx[counter] = "nil"
+                    xx[counter] = nil
                     counter += 1
                 }
                 else{
@@ -70,7 +70,7 @@ public class Emptyier {
         }
         
     }
-    func callall(dof:String) -> [[Any]] {
+    func callall(dof:String) -> [[Int?]] {
         eraser(diff:dof)
         cleaner()
         return cleaned

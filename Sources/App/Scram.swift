@@ -1,10 +1,3 @@
-//var x = [Int]()
-//x = [1,2,3,4,5,6,7,8,9]
-//x.shuffle()
-//shuffles to create a first line this is easier than using logic to try to generate a new line
-//print(x)
-//var counter = 1
-///stores all the lines for the sudoku board
 
 public class Scram {
     var x = [Int]()

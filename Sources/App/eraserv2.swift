@@ -1,8 +1,7 @@
- 
 public class Emptyier {
     var fullboard = Scram().combiner()         
     var doneboard = [[Int]]()
-    var cleaned = [[Int?]]()
+    var cleaned = [[Any]]()
 
     func eraser(diff:String){
         var countempt = 0
@@ -13,14 +12,14 @@ public class Emptyier {
             diffnumber = 2
         case "medium":
             diffnumber = 4
-        case "diffucult":
+        case "hard":
             diffnumber = 6
         case "insane":
             diffnumber = 8
         default:
             print("not a choice please renter level diffuculty")
         }             
-       
+        
         for x in fullboard{
             var newx = [Int]()
             newx = x
@@ -46,21 +45,24 @@ public class Emptyier {
     func cleaner() {
         var counter = 0
         for x in doneboard{
-            var xx = [Int?]()
+            var xx = [Any]()
             xx = x
             counter = 0
             for y in x{        
                 if y == 0{
-                    xx[counter] = nil
+                    xx[counter] = "-"
                     counter += 1
                 }
                 else{
+                    
                     counter += 1
                 }
             }
             cleaned.append(xx)
             
+            
         }
+        /*
         print(cleaned)        
         for x in cleaned{
             print(x)
@@ -68,13 +70,14 @@ public class Emptyier {
         for x in doneboard{
             print(x)
         }
-        
+        */
     }
-    func callall(dof:String) -> [[Int?]] {
+    
+    func callall(dof:String) -> [[Any]] {
         eraser(diff:dof)
         cleaner()
         return cleaned
     }
-
+    
 }
 var finsihed = Emptyier().callall(dof:"easy")

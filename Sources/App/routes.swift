@@ -19,7 +19,7 @@ func routes(_ app: Application) throws {
     app.get("nohello") { req -> String in
         return "498837"
     }
-    app.post("newgame",":diffuculty") { req -> String in
+    app.post("game","create",":diffuculty") { req -> String in
         let diff = req.parameters.get("diffuculty", as: String.self)!
         let tomp = Emptyier().callall(dof:diff)
         gametraker.append(tomp)
@@ -27,14 +27,14 @@ func routes(_ app: Application) throws {
         return("\(gamenum)")
         
     }
-    app.get("callgam",":gamenumb") { req -> String in
+    app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
         var x = [[Int?]]()
         x = gametraker[gameumb]
         
         return ("\(x)")
     }
-    app.get("cell",":gamenumb",":row",":cell") { req -> String in
+    app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
         let rownumb = req.parameters.get("row", as: Int.self)!
         let cellnumb = req.parameters.get("cell", as: Int.self)!
@@ -45,7 +45,7 @@ func routes(_ app: Application) throws {
         let z = y[cellnumb]
         return ("\(z)")
     }
-    app.put("xcell",":gamenhub",":row",":cell",":changed") { req -> String in
+    app.put("game","ccell",":gamenhub",":row",":cell",":changed") { req -> String in
         let gamehub = req.parameters.get("gamenhub", as: Int.self)!
         let rownumb = req.parameters.get("row", as: Int.self)!
         let cellnumb = req.parameters.get("cell", as: Int.self)!

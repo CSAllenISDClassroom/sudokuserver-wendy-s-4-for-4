@@ -61,7 +61,7 @@ This the same as calling a game except at the end you need to specify a row and 
 
 ![plot](cat straight.jfif)
 
-![alt text](https://github.com/Rohan-Kalyanpura/Sudoku/blob/main/cat straight.jfif?raw=true)
+![alt text](https://github.com/Rohan-Kalyanpura/Sudoku/blob/main/catstraight.jfif?raw=true)
 
 ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 

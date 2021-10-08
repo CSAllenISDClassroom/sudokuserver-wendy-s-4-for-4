@@ -59,7 +59,7 @@ ex:
 
 This the same as calling a game except at the end you need to specify a row and cell number for the specified cell number you want to view.And then you want to add on the number that you want to  replace in the sudoku board this number can be any number you want it to be but it must be Integer otherwise it will crash. This issue is still being worked on at the current moment. The row and cell number can not exceed 0-8 either way this will create an overflow error because that number does not exist as in a sudoku board since the rows 0-8 and cells 0-8
 
-#Are you stressed calm down by looking at these beautiful images
+# Are you stressed calm down by looking at these beautiful images
 
 ![alt text](https://github.com/Rohan-Kalyanpura/Sudoku/blob/main/catstraight.jfif?raw=true)
 

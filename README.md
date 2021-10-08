@@ -3,7 +3,7 @@ Sudoku Board
 This is a fully functional sudoku board generating api
 sudoku-wendy-s-four-for-four
 
-# Create a new game amd chossing a diffuculty:
+# Create a new game and chossing a diffuculty:
 use post to create a new game
 
 ex:

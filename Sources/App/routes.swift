@@ -1,11 +1,11 @@
 // useful video https://www.youtube.com/watch?v=Bml5-9RR4Hk
 import Vapor
-var gametraker = [[[Int?]]]()
+var gametracker = [[[Int?]]]()
 var gamenum = -1
 
 func gamereturn() -> [[Int?]]{
     var x = [[Int?]]()
-    x = gametraker[0]
+    x = gametracker[0]
     return x
 }
 func routes(_ app: Application) throws {
@@ -22,7 +22,7 @@ func routes(_ app: Application) throws {
     app.post("game","create",":diffuculty") { req -> String in
         let diff = req.parameters.get("diffuculty", as: String.self)!
         let tomp = Emptyier().callall(dof:diff)
-        gametraker.append(tomp)
+        gametracker.append(tomp)
         gamenum += 1
         return("\(gamenum)")
         
@@ -30,7 +30,7 @@ func routes(_ app: Application) throws {
     app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
         var x = [[Int?]]()
-        x = gametraker[gameumb]
+        x = gametracker[gameumb]
         
         return ("\(x)")
     }
@@ -40,7 +40,7 @@ func routes(_ app: Application) throws {
         let cellnumb = req.parameters.get("cell", as: Int.self)!
         var x = [[Int?]]()
         var y = [Int?]()
-        x = gametraker[gameumb]
+        x = gametracker[gameumb]
         y = x[rownumb]
         let z = y[cellnumb]
         return ("\(z)")
@@ -52,11 +52,11 @@ func routes(_ app: Application) throws {
         let changenumb = req.parameters.get("changed", as: Int.self)!
 
         var x = [[Int?]]()
-         x = gametraker[gamehub]
+         x = gametracker[gamehub]
         var y = x[rownumb]
         y[cellnumb] = changenumb
         x[rownumb] = y
-        gametraker[gamehub] = x
+        gametracker[gamehub] = x
         
  
         return("hi")       

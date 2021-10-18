@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SudokuServer",
+    name: "sudoku",
     platforms: [
        .macOS(.v10_15)
     ],

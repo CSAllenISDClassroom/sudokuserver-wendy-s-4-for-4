@@ -21,9 +21,13 @@ ex:
 This uses a post to call a function which will call another function to generate a board and then it will be passed on to the next function which will then delete random part of the rows for the whole arrays and then storing it in a variable.
 
 # Calling a game 
-game/call/(id that was specified when game was created)
+
+use get to call a already created game
+
 
 ex:
+
+game/call/(id that was specified when game was created)
 
 /game/call/0
 
@@ -36,9 +40,11 @@ The id is provided when you create the game
 
 # get get a cell
 
-game/call/(gameid)/(rownumb)/(cellnumb)
+use get to call a cell from a already created game
 
 ex:
+
+game/call/(gameid)/(rownumb)/(cellnumb)
 
 /game/call/0/5/8
 
@@ -47,9 +53,12 @@ ex:
 This the same as calling a game except at the end you need to specify a row and cell number for the specified cell number you want to view. the row and cell number can not exceed 0-8 either way this will create an overflow error because that number does not exist as in a sudoku board since the rows 0-8 and cells 0-8
 
 # change a cell game
-game/change/(gameid)/(rownumb)/(cellnumb)/(number you want to replace with)
+
+use put to change a cell from a already created game
 
 ex:
+
+game/change/(gameid)/(rownumb)/(cellnumb)/(number you want to replace with)
 
 /game/call/0/5/8/2
 

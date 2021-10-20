@@ -28,7 +28,7 @@ func routes(_ app: Application) throws {
         if check.contains(diff){
             print("work")
         }else{
-            return("please enter a valid diffuculty")
+            return("400 Bad Request (difficulty specified doesn't match requirements)")
         }
         let tomp = Emptyier().callall(dof:diff)
         gametracker.append(tomp)
@@ -40,7 +40,7 @@ func routes(_ app: Application) throws {
     app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
         if gameumb >= gametracker.count{
-            return("enter the id that has been created or make more games")
+            return("400 Bad Request (filter specified doesn't match requirements)")
         }
         var x = [[Int?]]()
         x = gametracker[gameumb]
@@ -62,13 +62,13 @@ func routes(_ app: Application) throws {
             return("please enter an apporiate value")
         }
         if gameumb >= gametracker.count{
-            return("enter the id that has been created or make more games")
+            return("400 Bad Request (RowIndex is out of range 0 ... 8)")
         }
         if rownumb < 0 || rownumb > 9{
-            return("choose a row number between 0-8")
+            return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         if cellnumb < 0 || cellnumb > 9{
-            return("choose a cell number between 0-8")
+            return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         
         var x = [[Int?]]()
@@ -101,13 +101,13 @@ func routes(_ app: Application) throws {
             return("enter the id that has been created or make more games")
         }
         if rownumb < 0 || rownumb > 9{
-            return("choose a row number between 0-8")
+            return("400 Bad Request (RowIndex is out of range 0 ... 8)")
         }
         if cellnumb < 0 || cellnumb > 9{
-            return("choose a cell number between 0-8")
+            return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         if changenumb <= 0 || changenumb > 9{
-            return("the number you want to change must be between 1-9")
+            return("400 Bad Request (value is out of range 1 ... 9 or null)")
         }
         
         var x = [[Int?]]()

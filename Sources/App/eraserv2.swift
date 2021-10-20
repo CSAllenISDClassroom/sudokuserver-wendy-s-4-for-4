@@ -14,7 +14,7 @@ public class Emptyier {
             diffnumber = 4
         case "hard":
             diffnumber = 6
-        case "insane":
+        case "hell":
             diffnumber = 8
         default:
             print("not a choice please renter level diffuculty")

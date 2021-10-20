@@ -16,13 +16,12 @@ public class Scram {
     var row8 = [Int]()
     var row9 = [Int]()
 
-<<<<<<< HEAD
+
 
     func scrambler (rotate:[Int],track:Int) ->[Int]{
-=======
+
 //makes sure to scramle the entire sudoku board
     func scrambler (rotat:[Int],track:Int) ->[Int]{
->>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
 
         var count = 1 //keeps track of the numbers
         var first = [Int]() //stores first part of sudoku board

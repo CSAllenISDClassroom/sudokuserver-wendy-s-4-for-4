@@ -64,11 +64,11 @@ func routes(_ app: Application) throws {
         if gameumb >= gametracker.count{
             return("enter the id that has been created or make more games")
         }
-        if rownumb <= 0 || rownumb > 9{
-            return("choose a row number between 1-8")
+        if rownumb < 0 || rownumb > 9{
+            return("choose a row number between 0-8")
         }
-        if cellnumb <= 0 || cellnumb > 9{
-            return("choose a cell number between 1-8")
+        if cellnumb < 0 || cellnumb > 9{
+            return("choose a cell number between 0-8")
         }
         
         var x = [[Int?]]()
@@ -100,14 +100,14 @@ func routes(_ app: Application) throws {
         if gamehub >= gametracker.count{
             return("enter the id that has been created or make more games")
         }
-        if rownumb <= 0 || rownumb > 9{
-            return("choose a row number between 1-8")
+        if rownumb < 0 || rownumb > 9{
+            return("choose a row number between 0-8")
         }
-        if cellnumb <= 0 || cellnumb > 9{
-            return("choose a cell number between 1-8")
+        if cellnumb < 0 || cellnumb > 9{
+            return("choose a cell number between 0-8")
         }
         if changenumb <= 0 || changenumb > 9{
-            return("the number you want to change must be between 1-8")
+            return("the number you want to change must be between 1-9")
         }
         
         var x = [[Int?]]()

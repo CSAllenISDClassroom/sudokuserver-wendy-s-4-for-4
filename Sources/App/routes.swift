@@ -16,9 +16,7 @@ func routes(_ app: Application) throws {
     app.get("hello") { req -> String in
         return "hello"
     }
-    app.get("nohello") { req -> String in
-        return "498837"
-    }
+
     app.post("game","create",":diffuculty") { req -> String in
         guard let diff = req.parameters.get("diffuculty", as: String.self) else{
             return("please enter apporiate variable")
@@ -36,6 +34,7 @@ func routes(_ app: Application) throws {
         return("\(gamenum)")
         
     }
+
     //gets the sudoku board
     app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
@@ -47,6 +46,7 @@ func routes(_ app: Application) throws {
         
         return ("\(x)")
     }
+
     //gets the sudoku board
     app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         guard let gameumb = req.parameters.get("gamenumb", as: Int.self)

@@ -34,60 +34,46 @@ func routes(_ app: Application) throws {
         return("\(gameNumber)")
         
     }
-<<<<<<< HEAD
-    app.get("game","call",":gameNumber") { req -> String in
-        let gameNumber = req.parameters.get("gameNumber", as: Int.self)!
-=======
+
 
     //gets the sudoku board
     app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
-        if gameumb >= gametracker.count{
+        if gameumb >= gameTracker.count{
             return("400 Bad Request (filter specified doesn't match requirements)")
         }
- >>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
         var x = [[Int?]]()
         x = gameTracker[gameNumber]
         
         return ("\(x)")
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-    app.get("game","cellCall",":gameNumber",":row",":cell") { req -> String in
-        let gameNumber = req.parameters.get("gameNumber", as: Int.self)!
-        let rowNumber = req.parameters.get("row", as: Int.self)!
-        let cellNumber = req.parameters.get("cell", as: Int.self)!
->>>>>>> f295b1ba032f8108aeb79e1d63cfa307106d6c53
-=======
 
->>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
+
     //gets the sudoku board
     app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         guard let gameumb = req.parameters.get("gamenumb", as: Int.self)
         else{
             return("please enter an apporiate value")
         }
-        guard let rownumb = req.parameters.get("row", as: Int.self)
+        guard let rowNumber = req.parameters.get("row", as: Int.self)
         else{
             return("please enter an apporiate value")
         }
-        guard let cellnumb = req.parameters.get("cell", as: Int.self)
+        guard let cellNumber = req.parameters.get("cell", as: Int.self)
         else{
             return("please enter an apporiate value")
         }
-        if gameumb >= gametracker.count{
+        if gameumb >= gameTracker.count{
             return("400 Bad Request (RowIndex is out of range 0 ... 8)")
         }
-        if rownumb < 0 || rownumb > 9{
+        if rowNumber < 0 || rowNumber > 9{
             return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
-        if cellnumb < 0 || cellnumb > 9{
+        if cellNumber < 0 || cellNumber > 9{
             return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         
->>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
+
         var x = [[Int?]]()
         var y = [Int?]()
         x = gameTracker[gameNumber]
@@ -95,25 +81,18 @@ func routes(_ app: Application) throws {
         let z = y[cellNumber]
         return ("\(z)")
     }
-<<<<<<< HEAD
-    app.put("game","cell",":gameHub",":row",":cell",":changed") { req -> String in
-        let gameHub = req.parameters.get("gameHub", as: Int.self)!
-        let rowNumber = req.parameters.get("row", as: Int.self)!
-        let cellNumber = req.parameters.get("cell", as: Int.self)!
-        let changeNumber = req.parameters.get("changed", as: Int.self)!
 
-=======
     
     app.put("game","ccell",":gamenhub",":row",":cell",":changed") { req -> String in
         guard let gamehub = req.parameters.get("gamenhub", as: Int.self)
         else{
             return("choose a number")
         }
-        guard let rownumb = req.parameters.get("row", as: Int.self)
+        guard let rowNumb = req.parameters.get("row", as: Int.self)
         else{
             return("choose a number")
         }
-        guard let cellnumb = req.parameters.get("cell", as: Int.self)
+        guard let cellNumb = req.parameters.get("cell", as: Int.self)
         else{
             return("choose a number")
         }
@@ -122,26 +101,26 @@ func routes(_ app: Application) throws {
             return("choose a number")
         }
            //gives out the respective warnings when a error is made                                                        
-        if gamehub >= gametracker.count{
+        if gamehub >= gameTracker.count{
             return("enter the id that has been created or make more games")
         }
-        if rownumb < 0 || rownumb > 9{
+        if rowNumb < 0 || rowNumb > 9{
             return("400 Bad Request (RowIndex is out of range 0 ... 8)")
         }
-        if cellnumb < 0 || cellnumb > 9{
+        if cellNumb < 0 || cellNumb > 9{
             return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         if changenumb <= 0 || changenumb > 9{
             return("400 Bad Request (value is out of range 1 ... 9 or null)")
         }
         
->>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
+
         var x = [[Int?]]()
-         x = gameTracker[gameHub]
-        var y = x[rowNumber]
-        y[cellNumber] = changeNumber
-        x[rowNumber] = y
-        gameTracker[gameHub] = x
+         x = gameTracker[gamehub]
+        var y = x[rowNumb]
+        y[cellNumb] = changenumb
+        x[rowNumb] = y
+        gameTracker[gamehub] = x
         
  
         return("hi")       

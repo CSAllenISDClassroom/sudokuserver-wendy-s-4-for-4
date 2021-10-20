@@ -1,7 +1,7 @@
 
 public class Scram {
     var x = [Int]()
-    func crea() {
+    func create() {
         x = [1,2,3,4,5,6,7,8,9]
         x.shuffle()
     }
@@ -16,38 +16,43 @@ public class Scram {
     var row8 = [Int]()
     var row9 = [Int]()
 
+<<<<<<< HEAD
+
+    func scrambler (rotate:[Int],track:Int) ->[Int]{
+=======
 //makes sure to scramle the entire sudoku board
     func scrambler (rotat:[Int],track:Int) ->[Int]{
+>>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
 
         var count = 1 //keeps track of the numbers
-        var fir = [Int]() //stores first part of sudoku board
-        var sec = [Int]() //stores second part of sudoku board
+        var first = [Int]() //stores first part of sudoku board
+        var second = [Int]() //stores second part of sudoku board
         var f = [Int]() //stores the final and is returned to become the next row
-        for i in rotat{ //loops through previous array to shift them to left
+        for i in rotate{ //loops through previous array to shift them to left
             if count <= track { //uses track to see how many to take off the front
-                fir.append(i) //add to a first array
+                first.append(i) //add to a first array
                 count += 1
             }
             else{
-                sec.append(i) //add to a seconf array
+                second.append(i) //add to a second array
                 count += 1
             }
         }
-        f = sec + fir //combines the arrays together
+        f = second + first //combines the arrays together
 
         return f
     }
     func combiner() ->[[Int]] {
-        crea()
-        row1 = scrambler(rotat:x,track:3)
-        row2 = scrambler(rotat:row1,track:3)
-        row3 = scrambler(rotat:row2,track:3)
-        row4 = scrambler(rotat:row3,track:3)
-        row5 = scrambler(rotat:row4,track:3)
-        row6 = scrambler(rotat:row5,track:3)
-        row7 = scrambler(rotat:row6,track:3)
-        row8 = scrambler(rotat:row7,track:3)
-        row9 = scrambler(rotat:row8,track:3)
+        create()
+        row1 = scrambler(rotate:x,track:3)
+        row2 = scrambler(rotate:row1,track:3)
+        row3 = scrambler(rotate:row2,track:3)
+        row4 = scrambler(rotate:row3,track:3)
+        row5 = scrambler(rotate:row4,track:3)
+        row6 = scrambler(rotate:row5,track:3)
+        row7 = scrambler(rotate:row6,track:3)
+        row8 = scrambler(rotate:row7,track:3)
+        row9 = scrambler(rotate:row8,track:3)
         box.append(row1)
         box.append(row2)
         box.append(row3)

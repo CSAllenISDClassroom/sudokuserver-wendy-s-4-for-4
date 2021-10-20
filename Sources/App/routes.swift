@@ -1,11 +1,11 @@
 // useful video https://www.youtube.com/watch?v=Bml5-9RR4Hk
 import Vapor
-var gametracker = [[[Int?]]]()
-var gamenum = -1
+var gameTracker = [[[Int?]]]()
+var gameNumber = -1
 
-func gamereturn() -> [[Int?]]{
+func gameReturn() -> [[Int?]]{
     var x = [[Int?]]()
-    x = gametracker[0]
+    x = gameTracker[0]
     return x
 }
 func routes(_ app: Application) throws {
@@ -29,11 +29,15 @@ func routes(_ app: Application) throws {
             return("400 Bad Request (difficulty specified doesn't match requirements)")
         }
         let tomp = Emptyier().callall(dof:diff)
-        gametracker.append(tomp)
-        gamenum += 1
-        return("\(gamenum)")
+        gameTracker.append(tomp)
+        gameNumber += 1
+        return("\(gameNumber)")
         
     }
+<<<<<<< HEAD
+    app.get("game","call",":gameNumber") { req -> String in
+        let gameNumber = req.parameters.get("gameNumber", as: Int.self)!
+=======
 
     //gets the sudoku board
     app.get("game","call",":gamenumb") { req -> String in
@@ -41,13 +45,21 @@ func routes(_ app: Application) throws {
         if gameumb >= gametracker.count{
             return("400 Bad Request (filter specified doesn't match requirements)")
         }
+>>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
         var x = [[Int?]]()
-        x = gametracker[gameumb]
+        x = gameTracker[gameNumber]
         
         return ("\(x)")
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+    app.get("game","cellCall",":gameNumber",":row",":cell") { req -> String in
+        let gameNumber = req.parameters.get("gameNumber", as: Int.self)!
+        let rowNumber = req.parameters.get("row", as: Int.self)!
+        let cellNumber = req.parameters.get("cell", as: Int.self)!
+>>>>>>> f295b1ba032f8108aeb79e1d63cfa307106d6c53
 =======
 
 >>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
@@ -75,13 +87,22 @@ func routes(_ app: Application) throws {
             return("400 Bad Request (cellIndex is out of range 0 ... 8)")
         }
         
+>>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
         var x = [[Int?]]()
         var y = [Int?]()
-        x = gametracker[gameumb]
-        y = x[rownumb]
-        let z = y[cellnumb]
+        x = gameTracker[gameNumber]
+        y = x[rowNumber]
+        let z = y[cellNumber]
         return ("\(z)")
     }
+<<<<<<< HEAD
+    app.put("game","cell",":gameHub",":row",":cell",":changed") { req -> String in
+        let gameHub = req.parameters.get("gameHub", as: Int.self)!
+        let rowNumber = req.parameters.get("row", as: Int.self)!
+        let cellNumber = req.parameters.get("cell", as: Int.self)!
+        let changeNumber = req.parameters.get("changed", as: Int.self)!
+
+=======
     
     app.put("game","ccell",":gamenhub",":row",":cell",":changed") { req -> String in
         guard let gamehub = req.parameters.get("gamenhub", as: Int.self)
@@ -114,12 +135,13 @@ func routes(_ app: Application) throws {
             return("400 Bad Request (value is out of range 1 ... 9 or null)")
         }
         
+>>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
         var x = [[Int?]]()
-         x = gametracker[gamehub]
-        var y = x[rownumb]
-        y[cellnumb] = changenumb
-        x[rownumb] = y
-        gametracker[gamehub] = x
+         x = gameTracker[gameHub]
+        var y = x[rowNumber]
+        y[cellNumber] = changeNumber
+        x[rowNumber] = y
+        gameTracker[gameHub] = x
         
  
         return("hi")       

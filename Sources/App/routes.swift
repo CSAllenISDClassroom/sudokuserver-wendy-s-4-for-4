@@ -52,12 +52,17 @@ func routes(_ app: Application) throws {
         return ("\(x)")
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+    
+=======
     app.get("game","cellCall",":gameNumber",":row",":cell") { req -> String in
         let gameNumber = req.parameters.get("gameNumber", as: Int.self)!
         let rowNumber = req.parameters.get("row", as: Int.self)!
         let cellNumber = req.parameters.get("cell", as: Int.self)!
+>>>>>>> f295b1ba032f8108aeb79e1d63cfa307106d6c53
 =======
 
+>>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
     //gets the sudoku board
     app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         guard let gameumb = req.parameters.get("gamenumb", as: Int.self)

@@ -1,4 +1,3 @@
-
 public class Scram {
     var x = [Int]()
     func create() {
@@ -18,10 +17,9 @@ public class Scram {
 
 
 
-    func scrambler (rotate:[Int],track:Int) ->[Int]{
-
+    
 //makes sure to scramle the entire sudoku board
-    func scrambler (rotat:[Int],track:Int) ->[Int]{
+    func scrambler (rotate:[Int],track:Int) ->[Int]{
 
         var count = 1 //keeps track of the numbers
         var first = [Int]() //stores first part of sudoku board
@@ -38,10 +36,11 @@ public class Scram {
             }
         }
         f = second + first //combines the arrays together
-
+    
         return f
     }
-    func combiner() ->[[Int]] {
+    
+    func combiner() -> [[Int]]{
         create()
         row1 = scrambler(rotate:x,track:3)
         row2 = scrambler(rotate:row1,track:3)
@@ -66,8 +65,9 @@ public class Scram {
     }
 
 
-}
+    
 
+}
 //call the function for every row could have been done more effiecently but couldnt think
 let finale = Scram().combiner()
 //print(finale)

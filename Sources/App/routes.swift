@@ -36,6 +36,7 @@ func routes(_ app: Application) throws {
         return("\(gamenum)")
         
     }
+    //gets the sudoku board
     app.get("game","call",":gamenumb") { req -> String in
         let gameumb = req.parameters.get("gamenumb", as: Int.self)!
         if gameumb >= gametracker.count{
@@ -46,6 +47,7 @@ func routes(_ app: Application) throws {
         
         return ("\(x)")
     }
+    //gets the sudoku board
     app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         guard let gameumb = req.parameters.get("gamenumb", as: Int.self)
         else{
@@ -76,6 +78,7 @@ func routes(_ app: Application) throws {
         let z = y[cellnumb]
         return ("\(z)")
     }
+    
     app.put("game","ccell",":gamenhub",":row",":cell",":changed") { req -> String in
         guard let gamehub = req.parameters.get("gamenhub", as: Int.self)
         else{
@@ -93,6 +96,7 @@ func routes(_ app: Application) throws {
         else{
             return("choose a number")
         }
+           //gives out the respective warnings when a error is made                                                        
         if gamehub >= gametracker.count{
             return("enter the id that has been created or make more games")
         }

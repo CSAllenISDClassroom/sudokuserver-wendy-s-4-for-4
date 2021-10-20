@@ -45,7 +45,7 @@ func routes(_ app: Application) throws {
         if gameumb >= gametracker.count{
             return("400 Bad Request (filter specified doesn't match requirements)")
         }
->>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
+ >>>>>>> 1525620de47081a95ca4833413e191a82a1d6b7e
         var x = [[Int?]]()
         x = gameTracker[gameNumber]
         

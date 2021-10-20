@@ -47,6 +47,7 @@ func routes(_ app: Application) throws {
         
         return ("\(x)")
     }
+    
     //gets the sudoku board
     app.get("game","cellcall",":gamenumb",":row",":cell") { req -> String in
         guard let gameumb = req.parameters.get("gamenumb", as: Int.self)

@@ -64,10 +64,10 @@ func routes(_ app: Application) throws {
             return("please enter an apporiate value")
         }
         if gameumb >= gameTracker.count{
-            return("400 Bad Request (RowIndex is out of range 0 ... 8)")
+            return("enter the id that has been created or make more games")
         }
         if rowNumber < 0 || rowNumber > 9{
-            return("400 Bad Request (cellIndex is out of range 0 ... 8)")
+            return("400 Bad Request (rowIndex is out of range 0 ... 8)")
         }
         if cellNumber < 0 || cellNumber > 9{
             return("400 Bad Request (cellIndex is out of range 0 ... 8)")

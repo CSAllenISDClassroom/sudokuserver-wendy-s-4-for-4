@@ -2,6 +2,7 @@
 Sudoku Board
 This is a fully functional sudoku board generating api
 sudoku-wendy-s-four-for-four
+TEAM MEMBERS: Miguel Marquez, Kian Durrett, Vyom Nemade, Rohan Kalyanpura, Logan O'roark.
 
 # Create a new game and chossing a diffuculty:
 use post to create a new game
